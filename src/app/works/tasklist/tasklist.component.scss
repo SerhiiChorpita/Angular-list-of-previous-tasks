@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: rgb(219, 219, 219);
+    border-bottom: 1px solid grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    span {
+        font-size: 28px;
+    }
+}
+
+.mn-block {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: 0;
+
+    &__1,
+    &__2 {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        width: 65%;
+        height: 70%;
+        padding: 5px;
+    }
+
+    &__1 {
+        width: 30%;
+    }
+
+    &__2 {
+        display: block;
+        overflow: auto;
+        margin-top: 2vh;
+        padding-top: 0;
+    }
+}
+
+.heading {
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    width: 100%;
+    height: 10%;
+}
+
+.inp-field {
+    display: block;
+    width: 100%;
+    height: 10%;
+    padding-left: 7px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.inp-1:focus,
+.inp-2:focus,
+.inp-3:focus {
+    outline: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+.btn-m {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 10%;
+
+    &__add {
+        background-color: rgb(74, 233, 59);
+
+        &:hover {
+            background-color: rgb(34, 196, 20);
+        }
+
+        &:active {
+            outline: 2px solid rgba(73, 233, 59, 0.466);
+        }
+    }
+
+    &__save {
+        background-color: rgb(134, 173, 255);
+
+        &:hover {
+            background-color: rgb(121, 156, 233);
+        }
+
+        &:active {
+            outline: 2px solid rgba(134, 172, 255, 0.486);
+        }
+    }
+}
+
+table {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-collapse: collapse;
+
+    tr:first-child {
+        display: table-header-group;
+        width: 100%;
+        height: 8vh;
+        border-top: 1px solid lightgray;
+        border-bottom: 2px solid lightgray;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        left: 0;
+    }
+
+    th {
+        text-align: left;
+    }
+
+    td {
+        height: 7vh;
+    }
+}
+
+.btn-edit,
+.btn-delete {
+    display: block;
+    height: 80%;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-edit {
+    width: 50px;
+    background-color: orange;
+}
+
+.btn-delete {
+    width: 70px;
+    background-color: rgb(228, 31, 31);
+    color: white;
+}

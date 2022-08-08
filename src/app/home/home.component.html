@@ -1,0 +1,29 @@
+<div class="main-block">
+    <div class="main-block__task1">
+        <div class="main-block__task1__box1">
+            <img src="">
+        </div>
+        <div class="main-block__task1__box2">
+            <button [routerLink]="['/works/cenzor']" routerLinkActive="active" [(ngModel)]="cenzor"
+                (click)="changeCenzor()">details</button>
+        </div>
+    </div>
+    <div class=" main-block__task2">
+        <div class="main-block__task2__box1">
+            <img src="">
+        </div>
+        <div class="main-block__task2__box2">
+            <button [routerLink]="['/works/userlist']" routerLinkActive="active" [(ngModel)]="userlist"
+                (click)="changeUserlist()">details</button>
+        </div>
+    </div>
+    <div class="main-block__task3">
+        <div class="main-block__task3__box1">
+            <img src="">
+        </div>
+        <div class="main-block__task3__box2">
+            <button [routerLink]="['/works/tasklist']" routerLinkActive="active" [(ngModel)]="tasklist"
+                (click)="changeTasklist()">details</button>
+        </div>
+    </div>
+</div>

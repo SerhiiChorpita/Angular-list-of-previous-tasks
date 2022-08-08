@@ -1,0 +1,22 @@
+<!-- <app-works></app-works> -->
+<div class="back-cont">
+    <div class="back-cont__main-block">
+        <div class="block-1">
+            <div class="block-1__name">Bad words:</div>
+            <p class="block-1__data" id="b-words">{{badWord}}</p>
+        </div>
+        <div class="block-2">
+            <input class="block-2__inp {{ifWClr?gClr:rClr}}" id="inp-field" type="text"
+                [placeholder]="isWord ? wordHere : writeAWord">
+            <button class="block-2__add" (click)="ifWord()" id="btn-add">Add</button>
+            <button class="block-2__reset" (click)="reset()" id="btn-reset">Reset</button>
+        </div>
+        <div class="block-3">
+            <textarea class="block-3__t-area {{ifTClr?gClr:rClr}}" id="text-area"
+                [placeholder]="isText ? textHere : writeAText"></textarea>
+        </div>
+        <div class="block-4">
+            <button class="block-4__cen" (click)="ifText()" id="btn-cen">Cenzor</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="nav">
+    <div class="nav__last-works">
+        <button>Last works > > ></button>
+    </div>
+    <div class="nav__btn-box">
+        <div class="nav__btn-box__cenzor">
+            <button [routerLink]="['/works/cenzor']" routerLinkActive="rout-active">Cenzor</button>
+        </div>
+        <div class="nav__btn-box__userlist">
+            <button [routerLink]="['/works/userlist']" routerLinkActive="rout-active">Userlist</button>
+        </div>
+        <div class="nav__btn-box__tasklist">
+            <button [routerLink]="['/works/tasklist']" routerLinkActive="rout-active">Tasklist</button>
+        </div>
+    </div>
+    <div class="nav__back-to-home">
+        <button [routerLink]="['/home']" routerLinkActive="active">Back to > > > Home</button>
+    </div>
+</div>

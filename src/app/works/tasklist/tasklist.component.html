@@ -1,0 +1,47 @@
+<!-- <app-works></app-works> -->
+<div class="header"><span>Angular users task</span></div>
+<div class="mn-block">
+    <div class="mn-block__1">
+        <div [ngClass]="'heading'">Login</div>
+        <input [ngClass]="'inp-field inp-1'" [(ngModel)]="newName" type="text" pattern="\w{1,10}"
+            placeholder="Enter login" required />
+        <div [ngClass]="'heading'">Password</div>
+        <input [ngClass]="'inp-field inp-2'" [(ngModel)]="newPass" type="password" pattern="[a-zA-Z0-9@!@#$%^]{6,16}"
+            placeholder="Enter password" required />
+        <div [ngClass]="'heading'">Email address</div>
+        <input [ngClass]="'inp-field inp-3'" [(ngModel)]="newEmail" type="email"
+            pattern="[a-zA-Z0-9]{1,20}\@[a-zA-Z0-9]{1,16}\.[a-zA-Z]{1,5}" placeholder="Enter email" required />
+        <button [ngClass]="'btn-m btn-m__add'" *ngIf="!editStatus" (click)="addName()" [disabled]="!newName">
+            Add user
+        </button>
+        <button [ngClass]="'btn-m btn-m__save'" *ngIf="editStatus" (click)="saveUser()" [disabled]="!newName">
+            Save edit user
+        </button>
+    </div>
+    <div class="mn-block__2">
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr *ngFor="let item of arrNames; index as i">
+                <td>{{ i + 1 }}.</td>
+                <td>{{ arrNames[i] }}</td>
+                <td>{{ arrPass[i] }}</td>
+                <td>{{ arrEmail[i] }}</td>
+                <td>
+                    <button [ngClass]="'btn-edit'" (click)="editUser(i)">Edit</button>
+                </td>
+                <td>
+                    <button [ngClass]="'btn-delete'" (click)="deleteUser(i)" [disabled]="editStatus">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
