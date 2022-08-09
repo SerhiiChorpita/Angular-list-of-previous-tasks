@@ -5,10 +5,9 @@ let getElm: any = (id: string) => document.querySelector(id);
 @Component({
   selector: 'app-cenzor',
   templateUrl: './cenzor.component.html',
-  styleUrls: ['./cenzor.component.scss']
+  styleUrls: ['./cenzor.component.scss'],
 })
 export class CenzorComponent {
-
   public wordHere: string = 'word here...';
   public writeAWord: string = 'Please write a word!';
   public isWord: boolean = true;
@@ -84,5 +83,4 @@ export class CenzorComponent {
     this.ifWClr = true;
     this.ifTClr = true;
   }
-
 }

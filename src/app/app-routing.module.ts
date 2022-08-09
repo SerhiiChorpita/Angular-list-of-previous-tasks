@@ -10,18 +10,27 @@ import { TasklistComponent } from './works/tasklist/tasklist.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'works/:category', component: WorksComponent },
-  // { path: '', pathMatch: 'full', redirectTo: '/works/cenzor' },
-  // { path: 'cenzor', component: CenzorComponent },
-  { path: 'userlist', component: UserlistComponent },
-  { path: 'cenzor', component: CenzorComponent },
-  { path: 'tasklist', component: TasklistComponent }
-  // { path: 'works/:userlist', component: UserlistComponent },
-  // { path: 'works/:tasklist', component: TasklistComponent }
+  {
+    path: 'works',
+    component: WorksComponent,
+    children: [
+      { path: 'cenzor', component: CenzorComponent },
+      { path: 'userlist', component: UserlistComponent },
+      { path: 'tasklist', component: TasklistComponent },
+    ],
+  },
 ];
+// const routes: Routes = [
+//   { path: '', component: HomeComponent },
+//   { path: 'home', component: HomeComponent },
+//   { path: 'works/:category', component: WorksComponent },
+//   { path: 'userlist', component: UserlistComponent },
+//   { path: 'cenzor', component: CenzorComponent },
+//   { path: 'tasklist', component: TasklistComponent }
+// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

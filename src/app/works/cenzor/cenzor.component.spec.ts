@@ -1,3 +1,4 @@
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CenzorComponent } from './cenzor.component';
@@ -8,9 +9,9 @@ describe('CenzorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CenzorComponent ]
+      declarations: [CenzorComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CenzorComponent);
     component = fixture.componentInstance;

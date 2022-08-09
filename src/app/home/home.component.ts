@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,22 +7,9 @@ import { Component, OnInit, Output } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  @Output() public cenzor: boolean = false;
-  public userlist: boolean = false;
-  public tasklist: boolean = false;
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-  changeCenzor(): void {
-    this.cenzor = !this.cenzor;
-  }
-  changeUserlist(): void {
-    this.userlist = !this.userlist;
-  }
-  changeTasklist(): void {
-    this.tasklist = !this.tasklist;
   }
 
 }

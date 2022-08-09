@@ -1,3 +1,4 @@
+
 .main-block{
 display: flex;
 flex-flow: row nowrap;
@@ -26,6 +27,7 @@ height: 90vh;
         height: 30%;
         background-color: rgb(228, 228, 228);
         border-top:2px solid rgb(150, 150, 150) ;
+
         button{
             display: block;
             width: 70%;
@@ -45,7 +47,16 @@ height: 90vh;
     }
 }
 &__task1{
-    img{
+    &::before{
+        display: block;
+        width: 100px;
+        height: 20px;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        background-color: bisque;
+    }
+    .img{
        background-image: url(../../assets/images/cenzor.jpg);
         width: 100%;
         height: 100%;
@@ -54,8 +65,8 @@ height: 90vh;
         }
 }
 &__task2{
-    img{
-       background-image: url(../../assets/images/userlist.jpg);
+    .img{
+       background-image: url(../../assets/images/tasklist.jpg);
         width: 100%;
         height: 100%;
         background-size: 100%;
@@ -63,8 +74,8 @@ height: 90vh;
         }
 }
 &__task3{
-    img{
-       background-image: url(../../assets/images/tasklist.jpg);
+    .img{
+       background-image: url(../../assets/images/userlist.jpg);
         width: 100%;
         height: 100%;
         background-size: 100%;

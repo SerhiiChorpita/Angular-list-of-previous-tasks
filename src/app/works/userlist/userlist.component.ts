@@ -3,101 +3,46 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-userlist',
   templateUrl: './userlist.component.html',
-  styleUrls: ['./userlist.component.scss']
+  styleUrls: ['./userlist.component.scss'],
 })
 export class UserlistComponent {
-  public userName: string = 'Ivan Ivanov';
   public arrNames: Array<string> = [];
-  public countOfTask: number = 0;
-  public checkCount = false;
-
+  public arrPass: Array<string> = [];
+  public arrEmail: Array<string> = [];
   public newName!: string;
+  public newPass!: string;
+  public newEmail!: string;
+
+  public editStatus = false;
+  public editIndex!: number;
 
   addName(): void {
     this.arrNames.push(this.newName);
+    this.arrPass.push(this.newPass);
+    this.arrEmail.push(this.newEmail);
     this.newName = '';
-    this.countOfTask = this.arrNames.length;
+    this.newPass = '';
+    this.newEmail = '';
   }
-  getCount() {
-    this.checkCount = true;
-    if (this.checkCount) {
-      this.countOfTask--;
-      this.checkCount = false;
-    }
-  }
-
-  // child
-
-  // @Output() fromChild = new EventEmitter();
-  public allIndex = this.arrNames.length;
-  public editIndex!: number;
-  public progress: boolean = false;
-  public classCheck!: any;
-  public btnCheck!: any;
-  public prDone: string = 'Done';
-  public prInProg: string = 'in PROGRESS';
-  public editStatus: boolean = false;
-  public editName!: string;
-
-  constructor() { }
-
-  ngOnInit(): void { }
-
-  check(index: number, name: string) {
-    this.editIndex = index;
-    this.arrNames[this.editIndex];
-    this.classCheck = name + this.editIndex + 'check';
-    this.btnCheck = name + this.editIndex + 'dlt';
-    if (
-      document.getElementsByClassName(this.classCheck)[0].textContent ===
-      this.prInProg
-    ) {
-      document.getElementsByClassName(this.classCheck)[0].textContent =
-        this.prDone;
-      document
-        .getElementsByClassName(this.classCheck)[0]
-        .setAttribute('style', 'color:green');
-      document
-        .getElementsByClassName(this.btnCheck)[0]
-        .setAttribute('style', 'background-color:red');
-      document
-        .getElementsByClassName(this.btnCheck)[0]
-        .removeAttribute('disabled');
-      console.log(document.getElementsByClassName(this.btnCheck)[0]);
-    } else if (
-      document.getElementsByClassName(this.classCheck)[0].textContent ===
-      this.prDone
-    ) {
-      document.getElementsByClassName(this.classCheck)[0].textContent =
-        this.prInProg;
-      document
-        .getElementsByClassName(this.classCheck)[0]
-        .setAttribute('style', 'color:red');
-      document
-        .getElementsByClassName(this.btnCheck)[0]
-        .setAttribute('style', 'background-color:rgba(211, 0, 0, 0.404)');
-      document
-        .getElementsByClassName(this.btnCheck)[0]
-        .setAttribute('disabled', 'disabled');
-    }
-  }
-  checkEditStatus(index: number) {
-    this.editIndex = index;
-    this.editStatus = !this.editStatus;
-  }
-  toEditName() {
-    this.editName = this.arrNames[this.editIndex];
-  }
-  saveEdit() {
-    this.editStatus = !this.editStatus;
-    this.arrNames[this.editIndex] = this.editName;
-    this.editName = '';
-  }
-  delete(index: number): void {
+  deleteUser(index: number): void {
     this.arrNames.splice(index, 1);
+    this.arrPass.splice(index, 1);
+    this.arrEmail.splice(index, 1);
   }
-  deleteCountNum(res: boolean) {
-    // this.fromChild.emit(res);
+  editUser(index: number): void {
+    this.newName = this.arrNames[index];
+    this.newPass = this.arrPass[index];
+    this.newEmail = this.arrEmail[index];
+    this.editIndex = index;
+    this.editStatus = true;
   }
-
+  saveUser(): void {
+    this.arrNames[this.editIndex] = this.newName;
+    this.arrPass[this.editIndex] = this.newPass;
+    this.arrEmail[this.editIndex] = this.newEmail;
+    this.newName = '';
+    this.newPass = '';
+    this.newEmail = '';
+    this.editStatus = false;
+  }
 }
